@@ -93,7 +93,7 @@ variable "desired_capacity" {
 
 variable "associate_public_ip_address" {
   description = "Should created instances be publicly accessible (if the SG allows)"
-  default = false
+  default     = false
 }
 
 variable "root_volume_size" {
@@ -380,7 +380,7 @@ resource "aws_cloudwatch_metric_alarm" "memory_low" {
 
 // The cluster name, e.g cdn
 output "name" {
-  value = "${var.name}"
+  value = "${aws_autoscaling_group.main.name}"
 }
 
 // The cluster security group ID.
