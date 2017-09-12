@@ -351,5 +351,10 @@ resource "aws_cloudwatch_metric_alarm" "memory_low" {
 
 // The cluster name, e.g cdn
 output "name" {
+  value = "${var.name}"
+}
+
+// The name of the autoscaling group
+output "autoscaling_group" {
   value = "${aws_autoscaling_group.main.name}"
 }
